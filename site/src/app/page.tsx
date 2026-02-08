@@ -2,7 +2,10 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustSignals } from "@/components/sections/TrustSignals";
 import { ServiceOverview } from "@/components/sections/ServiceOverview";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { PricingPreview } from "@/components/sections/PricingPreview";
+import { WhyFreedom } from "@/components/sections/WhyFreedom";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { FAQPreview } from "@/components/sections/FAQPreview";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { MapPin } from "lucide-react";
@@ -24,6 +27,14 @@ export default function HomePage() {
       <ServiceOverview />
 
       <ProcessSteps />
+
+      <PricingPreview />
+
+      <WhyFreedom />
+
+      <Testimonials />
+
+      <FAQPreview />
 
       {/* Service Area */}
       <section className="py-section-sm md:py-section bg-light-gray">
@@ -53,8 +64,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Testimonials />
 
       <CTABanner variant="red" image="/images/eco-recycling.jpg" />
     </>
