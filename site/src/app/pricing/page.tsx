@@ -26,6 +26,7 @@ export default function PricingPage() {
         variant="red"
         title="Not Sure What It'll Cost?"
         subtitle="Every job is unique. Contact us for a free, no-obligation on-site estimate."
+        image="/images/truck.jpg"
       />
     </>
   );

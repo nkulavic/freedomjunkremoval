@@ -42,7 +42,7 @@ export function Hero({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-navy/80" />
+          <div className="absolute inset-0 bg-navy/70" />
         </>
       ) : (
         <>

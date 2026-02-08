@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { motion } from "framer-motion";
 import { testimonials } from "@/app/data/testimonials";
 
@@ -9,6 +9,9 @@ export function Testimonials() {
     <section className="py-section-sm md:py-section bg-light-gray">
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
+          <p className="text-sm font-semibold text-red uppercase tracking-wider mb-2">
+            Testimonials
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             What Our Customers Say
           </h2>
@@ -26,17 +29,20 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-white rounded-xl p-6 shadow-sm border border-silver/20"
+              className="bg-white rounded-xl p-6 shadow-sm border border-silver/20 flex flex-col"
             >
-              <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: testimonial.rating }).map((_, j) => (
-                  <Star
-                    key={j}
-                    className="h-4 w-4 fill-amber-400 text-amber-400"
-                  />
-                ))}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: testimonial.rating }).map((_, j) => (
+                    <Star
+                      key={j}
+                      className="h-4 w-4 fill-amber-400 text-amber-400"
+                    />
+                  ))}
+                </div>
+                <Quote className="h-5 w-5 text-silver/50" />
               </div>
-              <p className="text-charcoal text-sm leading-relaxed">
+              <p className="text-charcoal text-sm leading-relaxed flex-1">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
               <div className="mt-4 pt-4 border-t border-silver/20">

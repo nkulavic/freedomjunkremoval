@@ -5,6 +5,7 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { MapPin } from "lucide-react";
 import { siteConfig } from "@/app/data/site-config";
 
 export default function HomePage() {
@@ -25,19 +26,26 @@ export default function HomePage() {
       <ProcessSteps />
 
       {/* Service Area */}
-      <section className="py-section-sm md:py-section">
+      <section className="py-section-sm md:py-section bg-light-gray">
         <div className="mx-auto max-w-7xl px-4 text-center">
+          <div className="inline-flex items-center gap-2 text-red mb-4">
+            <MapPin className="h-5 w-5" />
+            <span className="text-sm font-semibold uppercase tracking-wider">
+              Service Area
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
-            Serving Springfield & Beyond
+            Serving Springfield &amp; Sangamon County
           </h2>
           <p className="mt-3 text-lg text-slate max-w-2xl mx-auto">
-            We proudly serve Springfield, IL and surrounding communities.
+            Locally owned and operated. We proudly serve the greater Springfield
+            metro and surrounding communities.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {siteConfig.serviceArea.map((area) => (
               <span
                 key={area}
-                className="px-4 py-2 bg-light-gray rounded-full text-sm font-medium text-navy border border-silver/20"
+                className="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-navy border border-silver/20 shadow-sm"
               >
                 {area}, IL
               </span>

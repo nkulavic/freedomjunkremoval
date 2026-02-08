@@ -18,6 +18,9 @@ export function ServiceOverview() {
     <section className="py-section-sm md:py-section bg-light-gray">
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
+          <p className="text-sm font-semibold text-red uppercase tracking-wider mb-2">
+            What We Do
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             Our Services
           </h2>

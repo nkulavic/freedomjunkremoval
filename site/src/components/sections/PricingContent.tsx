@@ -12,6 +12,17 @@ export function PricingContent() {
       {/* Pricing Tiers */}
       <section className="py-section-sm md:py-section">
         <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold text-red uppercase tracking-wider mb-2">
+              Transparent Pricing
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy">
+              Pay Only for What You Need
+            </h2>
+            <p className="mt-3 text-slate max-w-xl mx-auto">
+              Every job is priced based on how much space your items take in our truck. No hidden fees — the price we quote is the price you pay.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pricingTiers.map((tier, i) => (
               <motion.div

@@ -29,15 +29,18 @@ export function ProcessSteps() {
     <section className="py-section-sm md:py-section">
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
+          <p className="text-sm font-semibold text-red uppercase tracking-wider mb-2">
+            Simple Process
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             How It Works
           </h2>
-          <p className="mt-3 text-lg text-slate max-w-2xl mx-auto">
-            Getting rid of your junk is as easy as 1-2-3.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {/* Connecting line (desktop) */}
+          <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-0.5 bg-silver/40" />
+
           {steps.map((step, i) => (
             <motion.div
               key={step.title}
@@ -45,15 +48,15 @@ export function ProcessSteps() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.15 }}
-              className="text-center"
+              className="relative text-center bg-white rounded-xl p-6 border border-silver/20 shadow-sm"
             >
-              <div className="relative mx-auto w-16 h-16 rounded-full bg-navy flex items-center justify-center mb-4">
+              <div className="relative mx-auto w-16 h-16 rounded-full bg-navy flex items-center justify-center mb-5">
                 <step.icon className="h-7 w-7 text-white" />
-                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-red text-white text-sm font-bold flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-red text-white text-sm font-bold flex items-center justify-center shadow-sm">
                   {i + 1}
                 </span>
               </div>
-              <h3 className="font-semibold text-lg text-navy">{step.title}</h3>
+              <h3 className="font-bold text-lg text-navy">{step.title}</h3>
               <p className="mt-2 text-sm text-slate leading-relaxed">
                 {step.description}
               </p>
