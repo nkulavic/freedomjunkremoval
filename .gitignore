@@ -1,0 +1,16 @@
+# Claude Code
+.mcp.json
+
+# OS
+.DS_Store
+
+# Node
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment
+.env
+.env.*
