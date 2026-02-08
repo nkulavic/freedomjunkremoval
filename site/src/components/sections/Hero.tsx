@@ -14,6 +14,7 @@ interface HeroProps {
   showPhone?: boolean;
   compact?: boolean;
   image?: string;
+  imageAlt?: string;
 }
 
 export function Hero({
@@ -24,6 +25,7 @@ export function Hero({
   showPhone = true,
   compact = false,
   image,
+  imageAlt = "Freedom Junk Removal serving Springfield IL",
 }: HeroProps) {
   return (
     <section
@@ -36,7 +38,7 @@ export function Hero({
         <>
           <Image
             src={image}
-            alt=""
+            alt={imageAlt}
             fill
             className="object-cover"
             priority

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "commercial junk removal",
     "furniture removal springfield il",
   ],
+  authors: [{ name: siteConfig.owner }],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,10 +33,34 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | Junk Removal Springfield IL`,
     description: siteConfig.description,
+    images: [
+      {
+        url: `${siteConfig.url}/images/hero-home.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Junk Removal in Springfield IL`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Junk Removal Springfield IL`,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/images/hero-home.jpg`],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
 };
 

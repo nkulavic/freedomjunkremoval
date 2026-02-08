@@ -8,7 +8,7 @@ import { faqItems } from "@/app/data/faq";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Freedom Junk Removal in Springfield, IL. Pricing, services, process, and more.",
+    "Answers to common questions about Freedom Junk Removal in Springfield, IL. Learn about our pricing, services, booking process, recycling practices, and what to expect.",
 };
 
 export default function FAQPage() {

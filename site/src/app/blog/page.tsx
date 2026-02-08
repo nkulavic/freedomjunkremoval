@@ -7,7 +7,7 @@ import { FileText, Lightbulb, Calendar, MapPin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Tips, guides, and local news from Freedom Junk Removal in Springfield, IL. Decluttering tips, moving guides, and more.",
+    "Tips, guides, and local news from Freedom Junk Removal in Springfield, IL. Decluttering tips, moving guides, seasonal cleanup checklists, and community recycling info.",
 };
 
 const upcomingTopics = [

@@ -124,7 +124,7 @@ export const services: Service[] = [
     seo: {
       title: "Garage Cleanout Springfield IL | Freedom Junk Removal",
       description:
-        "Professional garage cleanout service in Springfield, IL. Fast, affordable garage junk removal. Free estimates. We haul it all!",
+        "Professional garage cleanout service in Springfield, IL. Fast, affordable garage junk removal and organization. Free on-site estimates. Licensed and insured. We haul it all!",
       keywords: [
         "garage cleanout springfield il",
         "garage junk removal",

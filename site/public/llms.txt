@@ -1,0 +1,39 @@
+# Freedom Junk Removal
+
+> Springfield, Illinois' trusted junk removal service. Licensed, insured, and eco-friendly.
+
+## About
+
+Freedom Junk Removal is a locally owned and operated junk removal company serving Springfield, IL and surrounding communities. Founded by Nick Bromer, we provide fast, affordable, and eco-friendly junk removal for homes and businesses. We are licensed and insured.
+
+## Services
+
+- **Residential Junk Removal**: Furniture, appliances, yard waste, general household junk. Single items to full house cleanouts.
+- **Estate Cleanout**: Compassionate full-property cleanouts for estates, inherited properties, and downsizing.
+- **Garage Cleanout**: Complete garage clearing, organization, and haul-away.
+- **Commercial Junk Removal**: Office cleanouts, retail fixtures, warehouse debris, and construction cleanup for businesses.
+
+## Service Area
+
+Springfield IL, Chatham IL, Rochester IL, Sherman IL, Riverton IL, Jacksonville IL, Taylorville IL, Auburn IL, Williamsville IL
+
+## Pricing
+
+- Single Items: Starting at $75 (25% truck)
+- Partial Load: Starting at $200 (50% truck)
+- Full Load: Starting at $400 (100% truck)
+- Free on-site estimates with no obligation.
+
+## Contact
+
+- Phone: (217) 555-FREE
+- Email: info@freedomjunkremoval.com
+- Address: Springfield, IL 62701
+- Hours: Mon-Fri 7AM-7PM, Sat 8AM-5PM, Sun by appointment
+
+## Online
+
+- Website: https://freedomjunkremoval.vercel.app
+- Facebook: https://facebook.com/freedomjunkremoval
+- Instagram: https://instagram.com/freedomjunkremoval
+- YouTube: https://youtube.com/@freedomjunkremoval

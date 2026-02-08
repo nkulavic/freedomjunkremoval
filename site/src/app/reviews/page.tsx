@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Reviews & Testimonials",
   description:
-    "See what Springfield, IL homeowners say about Freedom Junk Removal. 5-star rated junk removal service. Read real customer reviews.",
+    "See what Springfield, IL homeowners say about Freedom Junk Removal. 5-star rated junk removal with real customer reviews. Licensed, insured, and locally owned.",
 };
 
 export default function ReviewsPage() {

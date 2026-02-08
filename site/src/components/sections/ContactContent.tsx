@@ -85,10 +85,11 @@ export function ContactContent() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate mb-1.5">
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-slate mb-1.5">
                       Full Name *
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       required
@@ -99,10 +100,11 @@ export function ContactContent() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate mb-1.5">
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-slate mb-1.5">
                       Phone Number *
                     </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       required
@@ -116,12 +118,14 @@ export function ContactContent() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate mb-1.5">
-                      Email
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-slate mb-1.5">
+                      Email *
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
+                      required
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
@@ -129,10 +133,11 @@ export function ContactContent() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate mb-1.5">
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-slate mb-1.5">
                       Service Type
                     </label>
                     <select
+                      id="contact-service"
                       name="serviceType"
                       value={formData.serviceType}
                       onChange={handleChange}
@@ -151,10 +156,11 @@ export function ContactContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate mb-1.5">
+                  <label htmlFor="contact-address" className="block text-sm font-medium text-slate mb-1.5">
                     Service Address
                   </label>
                   <input
+                    id="contact-address"
                     type="text"
                     name="address"
                     value={formData.address}
@@ -165,10 +171,11 @@ export function ContactContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate mb-1.5">
+                  <label htmlFor="contact-description" className="block text-sm font-medium text-slate mb-1.5">
                     What do you need removed?
                   </label>
                   <textarea
+                    id="contact-description"
                     name="description"
                     rows={4}
                     value={formData.description}
@@ -179,10 +186,11 @@ export function ContactContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate mb-1.5">
+                  <label htmlFor="contact-date" className="block text-sm font-medium text-slate mb-1.5">
                     Preferred Date
                   </label>
                   <input
+                    id="contact-date"
                     type="date"
                     name="preferredDate"
                     value={formData.preferredDate}
@@ -192,7 +200,7 @@ export function ContactContent() {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red text-sm">
+                  <p className="text-red text-sm" role="alert" aria-live="assertive">
                     Something went wrong. Please call us directly or try again.
                   </p>
                 )}

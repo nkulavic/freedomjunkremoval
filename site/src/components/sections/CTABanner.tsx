@@ -11,6 +11,7 @@ interface CTABannerProps {
   subtitle?: string;
   variant?: "navy" | "red";
   image?: string;
+  imageAlt?: string;
 }
 
 export function CTABanner({
@@ -18,6 +19,7 @@ export function CTABanner({
   subtitle = "Contact us today for a free, no-obligation estimate. Same-day service available.",
   variant = "navy",
   image,
+  imageAlt = "Freedom Junk Removal truck",
 }: CTABannerProps) {
   const bg = variant === "red" ? "bg-red" : "bg-navy";
   const overlay = variant === "red" ? "bg-red/80" : "bg-navy/80";
@@ -35,7 +37,7 @@ export function CTABanner({
         <>
           <Image
             src={image}
-            alt=""
+            alt={imageAlt}
             fill
             className="object-cover"
             sizes="100vw"

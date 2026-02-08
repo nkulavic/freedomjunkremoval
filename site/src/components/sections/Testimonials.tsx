@@ -32,15 +32,16 @@ export function Testimonials() {
               className="bg-white rounded-xl p-6 shadow-sm border border-silver/20 flex flex-col"
             >
               <div className="flex items-center justify-between mb-3">
-                <div className="flex gap-0.5">
+                <div className="flex gap-0.5" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {Array.from({ length: testimonial.rating }).map((_, j) => (
                     <Star
                       key={j}
                       className="h-4 w-4 fill-amber-400 text-amber-400"
+                      aria-hidden="true"
                     />
                   ))}
                 </div>
-                <Quote className="h-5 w-5 text-silver/50" />
+                <Quote className="h-5 w-5 text-silver/50" aria-hidden="true" />
               </div>
               <p className="text-charcoal text-sm leading-relaxed flex-1">
                 &ldquo;{testimonial.text}&rdquo;

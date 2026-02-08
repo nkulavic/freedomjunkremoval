@@ -1,4 +1,5 @@
 import { siteConfig } from "@/app/data/site-config";
+import { testimonials } from "@/app/data/testimonials";
 
 interface JsonLdProps {
   type: "LocalBusiness" | "Service" | "FAQPage";
@@ -6,6 +7,9 @@ interface JsonLdProps {
 }
 
 function getLocalBusinessSchema() {
+  const avgRating =
+    testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length;
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -14,6 +18,10 @@ function getLocalBusinessSchema() {
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
+    founder: {
+      "@type": "Person",
+      name: siteConfig.owner,
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.address.city,
@@ -41,6 +49,24 @@ function getLocalBusinessSchema() {
       },
     ],
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram, siteConfig.social.youtube],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: avgRating.toFixed(1),
+      reviewCount: testimonials.length,
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: testimonials.map((t) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      datePublished: t.date,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: t.rating,
+        bestRating: "5",
+      },
+      reviewBody: t.text,
+    })),
   };
 }
 
