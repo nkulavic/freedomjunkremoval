@@ -62,17 +62,19 @@ export function Header() {
                       />
                     </button>
                     {servicesOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl py-2 border border-silver/20">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="block px-4 py-2.5 text-sm text-charcoal hover:bg-light-gray hover:text-navy transition-colors"
-                            onClick={() => setServicesOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                      <div className="absolute top-full left-0 w-64 pt-2">
+                        <div className="bg-white rounded-lg shadow-xl py-2 border border-silver/20">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="block px-4 py-2.5 text-sm text-charcoal hover:bg-light-gray hover:text-navy transition-colors"
+                              onClick={() => setServicesOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
