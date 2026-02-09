@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { siteConfig } from "@/app/data/site-config";
 
 export async function POST(request: Request) {
   try {
@@ -31,8 +32,8 @@ Submitted: ${new Date().toISOString()}
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: "Freedom Junk Removal <noreply@freedomjunkremoval.com>",
-        to: ["info@freedomjunkremoval.com"],
+        from: `Freedom Junk Removal <noreply@${siteConfig.url.replace("https://", "")}>`,
+        to: [siteConfig.email],
         replyTo: email,
         subject: `New Estimate Request from ${name}`,
         text: emailBody,
