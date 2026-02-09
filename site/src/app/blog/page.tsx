@@ -3,11 +3,29 @@ import Link from "next/link";
 import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { FileText, Lightbulb, Calendar, MapPin } from "lucide-react";
+import { siteConfig } from "@/app/data/site-config";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+const pageTitle = "Blog";
+const pageDescription =
+  "Tips, guides, and local news from Freedom Junk Removal in Springfield, IL. Decluttering tips, moving guides, seasonal cleanup checklists, and community recycling info.";
+const pageUrl = `${siteConfig.url}/blog`;
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Tips, guides, and local news from Freedom Junk Removal in Springfield, IL. Decluttering tips, moving guides, seasonal cleanup checklists, and community recycling info.",
+  title: pageTitle,
+  description: pageDescription,
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    url: pageUrl,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+  },
 };
 
 const upcomingTopics = [
@@ -36,6 +54,7 @@ const upcomingTopics = [
 export default function BlogPage() {
   return (
     <>
+      <JsonLd type="CollectionPage" />
       <Hero
         title="Freedom Blog"
         subtitle="Tips, tricks, and local insights for a clutter-free life."

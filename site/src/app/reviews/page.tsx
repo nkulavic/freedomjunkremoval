@@ -3,11 +3,28 @@ import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { siteConfig } from "@/app/data/site-config";
+
+const pageTitle = "Reviews & Testimonials";
+const pageDescription =
+  "See what Springfield, IL homeowners say about Freedom Junk Removal. 5-star rated junk removal with real customer reviews. Licensed, insured, and locally owned.";
+const pageUrl = `${siteConfig.url}/reviews`;
 
 export const metadata: Metadata = {
-  title: "Reviews & Testimonials",
-  description:
-    "See what Springfield, IL homeowners say about Freedom Junk Removal. 5-star rated junk removal with real customer reviews. Licensed, insured, and locally owned.",
+  title: pageTitle,
+  description: pageDescription,
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    url: pageUrl,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+  },
 };
 
 export default function ReviewsPage() {

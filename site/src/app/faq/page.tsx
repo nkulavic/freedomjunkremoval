@@ -4,11 +4,28 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FAQContent } from "@/components/sections/FAQContent";
 import { faqItems } from "@/app/data/faq";
+import { siteConfig } from "@/app/data/site-config";
+
+const pageTitle = "Frequently Asked Questions";
+const pageDescription =
+  "Answers to common questions about Freedom Junk Removal in Springfield, IL. Learn about our pricing, services, booking process, recycling practices, and what to expect.";
+const pageUrl = `${siteConfig.url}/faq`;
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
-  description:
-    "Answers to common questions about Freedom Junk Removal in Springfield, IL. Learn about our pricing, services, booking process, recycling practices, and what to expect.",
+  title: pageTitle,
+  description: pageDescription,
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    url: pageUrl,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+  },
 };
 
 export default function FAQPage() {

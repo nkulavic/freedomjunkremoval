@@ -2,7 +2,7 @@ import { siteConfig } from "@/app/data/site-config";
 import { testimonials } from "@/app/data/testimonials";
 
 interface JsonLdProps {
-  type: "LocalBusiness" | "Service" | "FAQPage";
+  type: "LocalBusiness" | "Service" | "FAQPage" | "WebSite" | "ContactPage" | "CollectionPage";
   data?: Record<string, unknown>;
 }
 
@@ -106,6 +106,61 @@ function getFAQSchema(data?: Record<string, unknown>) {
   };
 }
 
+function getWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
+function getContactPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: `Contact ${siteConfig.name}`,
+    url: `${siteConfig.url}/contact`,
+    description: `Contact ${siteConfig.name} for a free junk removal estimate in Springfield, IL.`,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.zip,
+        addressCountry: "US",
+      },
+    },
+  };
+}
+
+function getCollectionPageSchema(data?: Record<string, unknown>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: (data?.name as string) || `${siteConfig.name} Blog`,
+    url: (data?.url as string) || `${siteConfig.url}/blog`,
+    description:
+      (data?.description as string) ||
+      `Tips, guides, and local news from ${siteConfig.name} in Springfield, IL.`,
+    publisher: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
 export function JsonLd({ type, data }: JsonLdProps) {
   let schema;
   switch (type) {
@@ -117,6 +172,15 @@ export function JsonLd({ type, data }: JsonLdProps) {
       break;
     case "FAQPage":
       schema = getFAQSchema(data);
+      break;
+    case "WebSite":
+      schema = getWebSiteSchema();
+      break;
+    case "ContactPage":
+      schema = getContactPageSchema();
+      break;
+    case "CollectionPage":
+      schema = getCollectionPageSchema(data);
       break;
   }
 

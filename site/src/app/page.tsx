@@ -15,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd type="LocalBusiness" />
+      <JsonLd type="WebSite" />
 
       <Hero
         title="Springfield's Most Trusted Junk Removal"

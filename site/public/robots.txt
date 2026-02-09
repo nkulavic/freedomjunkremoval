@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://freedomjunkremoval.vercel.app/sitemap.xml
