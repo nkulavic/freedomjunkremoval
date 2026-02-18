@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Freedom Junk Removal",
   tagline: "Break Free From the Clutter.",
   description:
-    "Springfield IL's most trusted junk removal service. Licensed, insured, and eco-friendly. Residential, estate cleanouts, garage cleanouts, and commercial junk hauling. Free estimates. Serving Sangamon County.",
+    "Springfield IL's most trusted junk removal and demolition service. Licensed, insured, and eco-friendly. Residential, estate cleanouts, garage cleanouts, commercial junk hauling, and demolition. Free estimates. Serving Sangamon County.",
   url: "https://freedomjunkremoval.pro",
   phone: "(217) 555-FREE",
   phoneRaw: "+12175553733",
@@ -50,6 +50,7 @@ export const navLinks = [
       { label: "Estate Cleanout", href: "/services/estate-cleanout" },
       { label: "Garage Cleanout", href: "/services/garage-cleanout" },
       { label: "Commercial", href: "/services/commercial" },
+      { label: "Demolition", href: "/services/demolition" },
     ],
   },
   { label: "Pricing", href: "/pricing" },

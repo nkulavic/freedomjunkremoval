@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Home, Heart, Warehouse, Building2, ArrowRight } from "lucide-react";
+import { Home, Heart, Warehouse, Building2, Hammer, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { services } from "@/app/data/services";
 
@@ -11,6 +11,7 @@ const iconMap: Record<string, React.ElementType> = {
   Heart,
   Warehouse,
   Building2,
+  Hammer,
 };
 
 export function ServiceOverview() {
@@ -30,7 +31,7 @@ export function ServiceOverview() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon] || Home;
             return (

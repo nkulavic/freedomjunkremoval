@@ -8,7 +8,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "How much does junk removal cost?",
     answer:
-      "Our pricing is based on how much space your items take up in our truck. Single items start at $75, partial loads run $200–$350, and full truck loads are $400–$600+. We always provide a free, no-obligation estimate before any work begins.",
+      "Our pricing is based on how much space your items take up in our truck. Single item pickups start at $100, and we price trailer loads in quarters: ¼ load ($200), ½ load ($400), ¾ load ($600), and full load ($800). We always provide a free, no-obligation estimate before any work begins.",
     category: "pricing",
   },
   {
@@ -20,7 +20,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "What items do you take?",
     answer:
-      "We remove almost anything non-hazardous: furniture, appliances, electronics, mattresses, yard waste, construction debris, hot tubs, exercise equipment, and general household junk. We cannot take hazardous materials like paint, chemicals, asbestos, or medical waste.",
+      "We remove almost anything non-hazardous: furniture, appliances, electronics, mattresses, beds, carpets, tires, scrap metal, scrap wood, yard waste, construction debris, hot tubs, exercise equipment, and general household junk. We also handle specialized cleanouts (garage, basement, attic, office, hoarder, eviction), curbside pickups, storm debris, and demolition. We cannot take hazardous materials like chemicals, asbestos, or medical waste.",
     category: "services",
   },
   {
@@ -33,6 +33,12 @@ export const faqItems: FAQItem[] = [
     question: "Can you remove construction debris?",
     answer:
       "Yes, we handle construction and renovation debris including drywall, lumber, flooring, fixtures, and general demo waste. Contact us for a quote on your project.",
+    category: "services",
+  },
+  {
+    question: "Do you offer demolition services?",
+    answer:
+      "Yes! We provide shed, fence, deck, and swingset demolition, as well as light interior demolition like cabinet removal. We tear it down and haul everything away — no need to hire a separate company. Contact us for a free estimate on your demolition project.",
     category: "services",
   },
   {

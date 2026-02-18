@@ -23,7 +23,7 @@ export function PricingContent() {
               Every job is priced based on how much space your items take in our truck. No hidden fees — the price we quote is the price you pay.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {pricingTiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
