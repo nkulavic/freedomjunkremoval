@@ -9,8 +9,8 @@ export interface PricingTier {
 
 export const pricingTiers: PricingTier[] = [
   {
-    name: "Single Items",
-    priceRange: "$75 – $150",
+    name: "Single Item Pickup",
+    priceRange: "$100 minimum",
     description:
       "Perfect for a single piece of furniture, appliance, or a few small items.",
     examples: [
@@ -20,13 +20,27 @@ export const pricingTiers: PricingTier[] = [
       "TV or electronics",
       "Exercise equipment",
     ],
-    fillLevel: 15,
+    fillLevel: 10,
   },
   {
-    name: "Partial Truck Load",
-    priceRange: "$200 – $350",
+    name: "¼ Load",
+    priceRange: "$200",
     description:
-      "Great for room cleanouts, garage decluttering, or multiple items.",
+      "A few items — great for small room cleanouts or a handful of bulky pieces.",
+    examples: [
+      "Small furniture set",
+      "Appliance + extras",
+      "Bags of yard waste",
+      "Office chair & desk",
+      "Tires & scrap metal",
+    ],
+    fillLevel: 25,
+  },
+  {
+    name: "½ Load",
+    priceRange: "$400",
+    description:
+      "Great for room cleanouts, garage decluttering, or multiple large items.",
     examples: [
       "Bedroom set",
       "Multiple appliances",
@@ -38,8 +52,22 @@ export const pricingTiers: PricingTier[] = [
     popular: true,
   },
   {
-    name: "Full Truck Load",
-    priceRange: "$400 – $600+",
+    name: "¾ Load",
+    priceRange: "$600",
+    description:
+      "Large cleanouts — multiple rooms, big garage jobs, or mixed debris.",
+    examples: [
+      "Multi-room furniture",
+      "Large garage cleanout",
+      "Construction debris",
+      "Basement partial clear",
+      "Mixed junk & appliances",
+    ],
+    fillLevel: 75,
+  },
+  {
+    name: "Full Load",
+    priceRange: "$800",
     description:
       "Complete cleanouts — garages, basements, estates, or full-property jobs.",
     examples: [
@@ -47,7 +75,7 @@ export const pricingTiers: PricingTier[] = [
       "Estate cleanout",
       "Basement clearing",
       "Move-out cleanout",
-      "Construction debris",
+      "Full construction debris",
     ],
     fillLevel: 100,
   },

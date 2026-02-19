@@ -22,7 +22,7 @@ export function PricingPreview() {
             fees — the price we quote is the price you pay.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {pricingTiers.map((tier, i) => (
             <motion.div
               key={tier.name}
