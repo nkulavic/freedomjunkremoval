@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X, ChevronDown, Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig, navLinks } from "@/app/data/site-config";
@@ -38,7 +39,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           >
             {/* Close */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
-              <span className="text-white font-bold text-lg">Menu</span>
+              <Image
+                src="/images/logo.png"
+                alt="Freedom Junk Removal"
+                width={160}
+                height={53}
+                className="h-9 w-auto"
+              />
               <button
                 onClick={onClose}
                 className="p-2 rounded-md hover:bg-white/10 text-white transition-colors"

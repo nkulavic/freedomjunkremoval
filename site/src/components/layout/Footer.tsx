@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import { siteConfig } from "@/app/data/site-config";
 
@@ -9,8 +10,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-xl font-bold">
-              <span className="text-red">Freedom</span> Junk Removal
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="Freedom Junk Removal"
+                width={200}
+                height={67}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="mt-3 text-sm text-white/70 leading-relaxed">
               {siteConfig.tagline} Springfield IL&apos;s trusted junk removal

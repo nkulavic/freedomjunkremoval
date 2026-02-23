@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, ChevronDown, Menu } from "lucide-react";
 import { siteConfig, navLinks } from "@/app/data/site-config";
 import { MobileNav } from "./MobileNav";
@@ -34,9 +35,15 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <span className="text-red">Freedom</span>
-              <span>Junk Removal</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="Freedom Junk Removal"
+                width={240}
+                height={80}
+                priority
+                className="h-14 w-auto"
+              />
             </Link>
 
             {/* Desktop nav */}
