@@ -43,6 +43,7 @@ export function Header() {
                 height={80}
                 priority
                 className="h-14 w-auto"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))' }}
               />
             </Link>
 
