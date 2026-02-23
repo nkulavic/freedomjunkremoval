@@ -14,9 +14,10 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Freedom Junk Removal"
-                width={200}
-                height={67}
-                className="h-11 w-auto"
+                width={280}
+                height={93}
+                className="h-16 w-auto"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))' }}
               />
             </Link>
             <p className="mt-3 text-sm text-white/70 leading-relaxed">
