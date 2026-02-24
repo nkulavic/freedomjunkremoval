@@ -80,23 +80,21 @@ export function PricingContent() {
                     </li>
                   ))}
                 </ul>
-
-                <a
-                  href={siteConfig.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors text-sm",
-                    tier.popular
-                      ? "bg-red hover:bg-red-dark text-white"
-                      : "bg-navy hover:bg-navy-light text-white"
-                  )}
-                >
-                  Get Free Estimate
-                  <ArrowRight className="h-4 w-4" />
-                </a>
               </motion.div>
             ))}
+          </div>
+
+          {/* Single CTA button */}
+          <div className="mt-10 text-center">
+            <a
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-red hover:bg-red-dark text-white font-semibold rounded-lg transition-colors text-lg shadow-lg shadow-red/20"
+            >
+              Get Your Free Estimate
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
