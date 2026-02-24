@@ -6,7 +6,7 @@ import { ContactContent } from "@/components/sections/ContactContent";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Freedom Junk Removal for a free, no-obligation junk removal estimate in Springfield, IL. Call, email, or fill out our form. Same-day and next-day service available.",
+    "Contact Freedom Junk Removal for a free, no-obligation junk removal estimate in Springfield, IL. Call, email, or book online. Same-day and next-day service available.",
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
       <JsonLd type="LocalBusiness" />
       <Hero
         title="Get Your Free Estimate"
-        subtitle="Fill out the form below or give us a call. We'll get back to you fast."
+        subtitle="Book online in minutes or reach out directly by phone or email."
         showPhone
         compact
         image="/images/truck.jpg"

@@ -1,287 +1,105 @@
 "use client";
 
-import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/app/data/site-config";
 
 export function ContactContent() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-    serviceType: "",
-    description: "",
-    preferredDate: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
-
-  function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("sending");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          address: "",
-          serviceType: "",
-          description: "",
-          preferredDate: "",
-        });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <section className="py-section-sm md:py-section">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-3"
+      <div className="mx-auto max-w-4xl px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-navy mb-4">
+            Ready to Get Started?
+          </h2>
+          <p className="text-lg text-slate max-w-2xl mx-auto mb-8">
+            Book your free estimate online or reach out directly. We're here to help with all your junk removal needs.
+          </p>
+          <a
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-red hover:bg-red-dark text-white font-semibold rounded-lg transition-colors text-lg shadow-lg shadow-red/20"
           >
-            <h2 className="text-2xl font-bold text-navy mb-6">
-              Request a Free Estimate
-            </h2>
+            Book Your Free Estimate
+            <ArrowRight className="h-5 w-5" />
+          </a>
+        </div>
 
-            {status === "sent" ? (
-              <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-                <p className="text-lg font-semibold text-green-800">
-                  Thank you! We&apos;ll get back to you shortly.
-                </p>
-                <p className="mt-2 text-green-700">
-                  Expect a response within 1–2 hours during business hours.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="contact-name" className="block text-sm font-medium text-slate mb-1.5">
-                      Full Name *
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-phone" className="block text-sm font-medium text-slate mb-1.5">
-                      Phone Number *
-                    </label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                      placeholder="(217) 555-1234"
-                    />
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.a
+            href={`tel:${siteConfig.phoneRaw}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-silver/20 hover:border-red/30 hover:shadow-lg transition-all group"
+          >
+            <div className="w-14 h-14 rounded-full bg-red/10 flex items-center justify-center group-hover:bg-red/20 transition-colors shrink-0">
+              <Phone className="h-7 w-7 text-red" />
+            </div>
+            <div>
+              <p className="text-sm text-slate mb-1">Call Us</p>
+              <p className="text-xl font-semibold text-navy">{siteConfig.phone}</p>
+            </div>
+          </motion.a>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="contact-email" className="block text-sm font-medium text-slate mb-1.5">
-                      Email *
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                      placeholder="you@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-service" className="block text-sm font-medium text-slate mb-1.5">
-                      Service Type
-                    </label>
-                    <select
-                      id="contact-service"
-                      name="serviceType"
-                      value={formData.serviceType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="residential">
-                        Residential Junk Removal
-                      </option>
-                      <option value="estate">Estate Cleanout</option>
-                      <option value="garage">Garage Cleanout</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
+          <motion.a
+            href={`mailto:${siteConfig.email}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-4 p-6 bg-white rounded-xl border border-silver/20 hover:border-navy/30 hover:shadow-lg transition-all group"
+          >
+            <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center group-hover:bg-navy/20 transition-colors shrink-0">
+              <Mail className="h-7 w-7 text-navy" />
+            </div>
+            <div>
+              <p className="text-sm text-slate mb-1">Email Us</p>
+              <p className="text-lg font-semibold text-navy break-all">{siteConfig.email}</p>
+            </div>
+          </motion.a>
 
-                <div>
-                  <label htmlFor="contact-address" className="block text-sm font-medium text-slate mb-1.5">
-                    Service Address
-                  </label>
-                  <input
-                    id="contact-address"
-                    type="text"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                    placeholder="123 Main St, Springfield, IL"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="contact-description" className="block text-sm font-medium text-slate mb-1.5">
-                    What do you need removed?
-                  </label>
-                  <textarea
-                    id="contact-description"
-                    name="description"
-                    rows={4}
-                    value={formData.description}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal resize-none"
-                    placeholder="Describe the items or job..."
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="contact-date" className="block text-sm font-medium text-slate mb-1.5">
-                    Preferred Date
-                  </label>
-                  <input
-                    id="contact-date"
-                    type="date"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-silver focus:ring-2 focus:ring-navy focus:border-navy transition-colors text-charcoal"
-                  />
-                </div>
-
-                {status === "error" && (
-                  <p className="text-red text-sm" role="alert" aria-live="assertive">
-                    Something went wrong. Please call us directly or try again.
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-red hover:bg-red-dark text-white font-semibold rounded-lg text-lg transition-colors disabled:opacity-50"
-                >
-                  <Send className="h-5 w-5" />
-                  {status === "sending" ? "Sending..." : "Send Request"}
-                </button>
-              </form>
-            )}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex items-start gap-4 p-6 bg-white rounded-xl border border-silver/20"
+          >
+            <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
+              <MapPin className="h-7 w-7 text-navy" />
+            </div>
+            <div>
+              <p className="text-sm text-slate mb-1">Service Area</p>
+              <p className="font-semibold text-navy">
+                {siteConfig.address.full}
+              </p>
+            </div>
           </motion.div>
 
-          {/* Contact Info Sidebar */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
+            transition={{ delay: 0.4 }}
+            className="flex items-start gap-4 p-6 bg-white rounded-xl border border-silver/20"
           >
-            <div className="bg-light-gray rounded-xl p-6 border border-silver/20 space-y-6">
-              <h3 className="text-xl font-bold text-navy">Get In Touch</h3>
-
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="flex items-center gap-3 p-4 bg-white rounded-lg border border-silver/20 hover:border-red/30 transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-full bg-red/10 flex items-center justify-center group-hover:bg-red/20 transition-colors">
-                  <Phone className="h-5 w-5 text-red" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate">Call Us</p>
-                  <p className="font-semibold text-navy">{siteConfig.phone}</p>
-                </div>
-              </a>
-
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-3 p-4 bg-white rounded-lg border border-silver/20 hover:border-navy/30 transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center group-hover:bg-navy/20 transition-colors">
-                  <Mail className="h-5 w-5 text-navy" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate">Email Us</p>
-                  <p className="font-semibold text-navy">{siteConfig.email}</p>
-                </div>
-              </a>
-
-              <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-silver/20">
-                <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
-                  <MapPin className="h-5 w-5 text-navy" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate">Service Area</p>
-                  <p className="font-semibold text-navy">
-                    {siteConfig.address.full}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-silver/20">
-                <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
-                  <Clock className="h-5 w-5 text-navy" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate">Business Hours</p>
-                  <p className="text-sm text-charcoal">
-                    Mon–Fri: {siteConfig.hours.weekday}
-                  </p>
-                  <p className="text-sm text-charcoal">
-                    Sat: {siteConfig.hours.saturday}
-                  </p>
-                  <p className="text-sm text-charcoal">
-                    Sun: {siteConfig.hours.sunday}
-                  </p>
-                </div>
-              </div>
+            <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
+              <Clock className="h-7 w-7 text-navy" />
+            </div>
+            <div>
+              <p className="text-sm text-slate mb-2">Business Hours</p>
+              <p className="text-sm text-charcoal">
+                Mon–Fri: {siteConfig.hours.weekday}
+              </p>
+              <p className="text-sm text-charcoal">
+                Sat: {siteConfig.hours.saturday}
+              </p>
+              <p className="text-sm text-charcoal">
+                Sun: {siteConfig.hours.sunday}
+              </p>
             </div>
           </motion.div>
         </div>
