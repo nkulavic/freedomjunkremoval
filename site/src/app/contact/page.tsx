@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Hero
         title="Get Your Free Estimate"
         subtitle="Book online in minutes or reach out directly by phone or email."
-        showPhone
+        showCta={false}
         compact
         image="/images/truck.jpg"
       />

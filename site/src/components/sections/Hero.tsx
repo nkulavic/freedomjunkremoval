@@ -12,6 +12,7 @@ interface HeroProps {
   ctaText?: string;
   ctaHref?: string;
   showPhone?: boolean;
+  showCta?: boolean;
   compact?: boolean;
   image?: string;
   imageAlt?: string;
@@ -21,8 +22,9 @@ export function Hero({
   title,
   subtitle,
   ctaText = "Get Your Free Estimate",
-  ctaHref = "/contact",
+  ctaHref = siteConfig.bookingUrl,
   showPhone = true,
+  showCta = true,
   compact = false,
   image,
   imageAlt = "Freedom Junk Removal serving Springfield IL",
@@ -85,29 +87,33 @@ export function Hero({
           {subtitle}
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            href={ctaHref}
-            className="inline-flex items-center px-8 py-4 bg-red hover:bg-red-dark text-white font-semibold rounded-lg text-lg transition-colors shadow-lg shadow-red/25"
+        {showCta && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            {ctaText}
-          </Link>
-
-          {showPhone && (
             <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg text-lg transition-colors border border-white/20 backdrop-blur-sm"
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-red hover:bg-red-dark text-white font-semibold rounded-lg text-lg transition-colors shadow-lg shadow-red/25"
             >
-              <Phone className="h-5 w-5" />
-              Call {siteConfig.phone}
+              {ctaText}
             </a>
-          )}
-        </motion.div>
+
+            {showPhone && (
+              <a
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg text-lg transition-colors border border-white/20 backdrop-blur-sm"
+              >
+                <Phone className="h-5 w-5" />
+                Call {siteConfig.phone}
+              </a>
+            )}
+          </motion.div>
+        )}
       </div>
     </section>
   );
