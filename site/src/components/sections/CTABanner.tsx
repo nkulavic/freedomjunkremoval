@@ -51,12 +51,14 @@ export function CTABanner({
           {subtitle}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`inline-flex items-center px-8 py-4 bg-white/10 border-2 border-white text-white font-semibold rounded-lg text-lg transition-colors ${hoverBg}`}
           >
             Get Your Free Quote
-          </Link>
+          </a>
           <a
             href={`tel:${siteConfig.phoneRaw}`}
             className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold text-lg hover:text-white/80 transition-colors"

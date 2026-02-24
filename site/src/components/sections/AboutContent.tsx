@@ -75,13 +75,15 @@ export function AboutContent() {
                 and the greater Springfield metro. Every dollar you spend with
                 Freedom stays in our community.
               </p>
-              <Link
-                href="/contact"
+              <a
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-red hover:bg-red-dark text-white font-semibold rounded-lg transition-colors"
               >
                 Get a Free Estimate
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

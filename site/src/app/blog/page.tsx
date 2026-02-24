@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/sections/Hero";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { siteConfig } from "@/app/data/site-config";
 import { FileText, Lightbulb, Calendar, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -77,12 +78,14 @@ export default function BlogPage() {
             <p className="text-slate mb-4">
               In the meantime, have a question or need junk removed?
             </p>
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-red hover:bg-red-dark text-white font-semibold rounded-lg transition-colors"
             >
               Get a Free Estimate
-            </Link>
+            </a>
           </div>
         </div>
       </section>

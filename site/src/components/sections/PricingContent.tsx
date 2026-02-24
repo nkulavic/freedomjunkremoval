@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { pricingTiers, pricingFactors } from "@/app/data/pricing";
+import { siteConfig } from "@/app/data/site-config";
 import { cn } from "@/lib/utils";
 
 export function PricingContent() {
@@ -80,8 +81,10 @@ export function PricingContent() {
                   ))}
                 </ul>
 
-                <Link
-                  href="/contact"
+                <a
+                  href={siteConfig.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors text-sm",
                     tier.popular
@@ -91,7 +94,7 @@ export function PricingContent() {
                 >
                   Get Free Estimate
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>

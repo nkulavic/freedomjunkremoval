@@ -116,13 +116,14 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 <Phone className="h-4 w-4" />
                 {siteConfig.phone}
               </a>
-              <Link
-                href="/contact"
-                onClick={onClose}
+              <a
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full py-3 bg-red hover:bg-red-dark text-white text-center rounded-lg font-semibold transition-colors"
               >
                 Get Free Quote
-              </Link>
+              </a>
             </div>
           </motion.div>
         </>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Service } from "@/app/data/services";
+import { siteConfig } from "@/app/data/site-config";
 
 interface ServicePageContentProps {
   service: Service;
@@ -38,13 +39,15 @@ export function ServicePageContent({ service }: ServicePageContentProps) {
                   {service.priceRange}
                 </span>
               </div>
-              <Link
-                href="/contact"
+              <a
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 px-7 py-3.5 bg-red hover:bg-red-dark text-white font-semibold rounded-lg transition-colors shadow-lg shadow-red/20"
               >
                 Get Your Free Estimate
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
             </motion.div>
 
             <motion.div

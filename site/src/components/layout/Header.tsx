@@ -100,12 +100,14 @@ export function Header() {
 
             {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
-              <Link
-                href="/contact"
+              <a
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center px-5 py-2.5 bg-red hover:bg-red-dark text-white text-sm font-semibold rounded-lg transition-colors"
               >
                 Get Free Quote
-              </Link>
+              </a>
               <button
                 className="lg:hidden p-2 rounded-md hover:bg-white/10 transition-colors"
                 onClick={() => setMobileOpen(true)}
