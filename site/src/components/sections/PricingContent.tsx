@@ -21,7 +21,7 @@ export function PricingContent() {
               Pay Only for What You Need
             </h2>
             <p className="mt-3 text-slate max-w-xl mx-auto">
-              Every job is priced based on how much space your items take in our truck. No hidden fees — the price we quote is the price you pay.
+              Every job is priced based on how much space your items take in our truck. No hidden fees — the price we estimate is the price you pay.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">

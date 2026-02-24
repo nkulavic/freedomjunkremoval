@@ -350,7 +350,7 @@ export function StartContent() {
               Straightforward Pricing
             </h2>
             <p className="mt-3 text-slate max-w-xl mx-auto">
-              We quote a firm price before we start. No hidden fees, no hourly
+              We estimate a firm price before we start. No hidden fees, no hourly
               charges.
             </p>
           </div>
@@ -389,7 +389,7 @@ export function StartContent() {
 
           <p className="text-center text-sm text-slate mt-6">
             Exact price depends on volume, weight, and accessibility. We always
-            quote before we load.
+            estimate before we load.
           </p>
         </div>
       </section>
@@ -453,7 +453,7 @@ export function StartContent() {
             </h2>
             <p className="mt-3 text-slate max-w-lg mx-auto">
               Tell us a little about the job and we&apos;ll get back to you with
-              a no-obligation quote — usually within a couple hours.
+              a no-obligation estimate — usually within a couple hours.
             </p>
           </div>
 
@@ -655,7 +655,7 @@ export function StartContent() {
             Let&apos;s Get Rid of It
           </h2>
           <p className="mt-4 text-lg text-white/80">
-            Call or text right now for a fast, free quote. Most jobs completed
+            Call or text right now for a fast, free estimate. Most jobs completed
             within 24 hours.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

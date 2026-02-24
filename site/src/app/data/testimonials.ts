@@ -52,7 +52,7 @@ export const testimonials: Testimonial[] = [
     name: "Tom & Janet W.",
     location: "Williamsville, IL",
     rating: 5,
-    text: "We had 30 years of stuff in our basement. Freedom came out, gave us a fair quote, and had everything cleared in one day. Wish we'd called them sooner!",
+    text: "We had 30 years of stuff in our basement. Freedom came out, gave us a fair estimate, and had everything cleared in one day. Wish we'd called them sooner!",
     serviceType: "Residential Junk Removal",
     date: "2025-12-03",
   },

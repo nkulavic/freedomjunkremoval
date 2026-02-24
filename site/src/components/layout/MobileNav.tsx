@@ -122,7 +122,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 rel="noopener noreferrer"
                 className="block w-full py-3 bg-red hover:bg-red-dark text-white text-center rounded-lg font-semibold transition-colors"
               >
-                Get Free Quote
+                Get Free Estimate
               </a>
             </div>
           </motion.div>

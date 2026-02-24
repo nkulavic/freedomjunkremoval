@@ -14,7 +14,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Do you offer free estimates?",
     answer:
-      "Yes! We provide free on-site estimates for every job. We'll look at what needs to go, give you an upfront price, and only proceed if you're happy with the quote. No surprises, no hidden fees.",
+      "Yes! We provide free on-site estimates for every job. We'll look at what needs to go, give you an upfront price, and only proceed if you're happy with the estimate. No surprises, no hidden fees.",
     category: "pricing",
   },
   {
@@ -32,7 +32,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Can you remove construction debris?",
     answer:
-      "Yes, we handle construction and renovation debris including drywall, lumber, flooring, fixtures, and general demo waste. Contact us for a quote on your project.",
+      "Yes, we handle construction and renovation debris including drywall, lumber, flooring, fixtures, and general demo waste. Contact us for an estimate on your project.",
     category: "services",
   },
   {

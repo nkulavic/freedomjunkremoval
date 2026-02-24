@@ -20,7 +20,7 @@ interface HeroProps {
 export function Hero({
   title,
   subtitle,
-  ctaText = "Get Your Free Quote",
+  ctaText = "Get Your Free Estimate",
   ctaHref = "/contact",
   showPhone = true,
   compact = false,

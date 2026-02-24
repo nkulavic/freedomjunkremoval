@@ -57,7 +57,7 @@ export function CTABanner({
             rel="noopener noreferrer"
             className={`inline-flex items-center px-8 py-4 bg-white/10 border-2 border-white text-white font-semibold rounded-lg text-lg transition-colors ${hoverBg}`}
           >
-            Get Your Free Quote
+            Get Your Free Estimate
           </a>
           <a
             href={`tel:${siteConfig.phoneRaw}`}

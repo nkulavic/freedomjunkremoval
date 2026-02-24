@@ -14,7 +14,7 @@ export default function ContactPage() {
     <>
       <JsonLd type="LocalBusiness" />
       <Hero
-        title="Get Your Free Quote"
+        title="Get Your Free Estimate"
         subtitle="Fill out the form below or give us a call. We'll get back to you fast."
         showPhone
         compact

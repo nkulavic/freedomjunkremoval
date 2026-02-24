@@ -19,7 +19,7 @@ export function PricingPreview() {
           </h2>
           <p className="mt-3 text-slate max-w-xl mx-auto">
             Based on how much space your items take in our truck. No hidden
-            fees — the price we quote is the price you pay.
+            fees — the price we estimate is the price you pay.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
