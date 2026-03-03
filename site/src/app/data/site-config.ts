@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Springfield IL's most trusted junk removal and demolition service. Licensed, insured, and eco-friendly. Residential, estate cleanouts, garage cleanouts, commercial junk hauling, and demolition. Free estimates. Serving Sangamon County.",
   url: "https://freedomjunkremoval.pro",
-  bookingUrl: "https://clienthub.getjobber.com/booking/eaf9c73a-566b-4276-90da-90386075f7be",
+  bookingUrl: "https://clienthub.getjobber.com/booking/8131aca7-736a-4ef7-864a-6398a83a8a8d",
   phone: "(217) 836-8658",
   phoneRaw: "+12178368658",
   email: "info@freedomjunkremoval.pro",
